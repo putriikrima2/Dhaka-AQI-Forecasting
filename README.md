@@ -2,9 +2,10 @@
 
 ## Project Overview
 
-This repository contains the original and revised research code for the study:
+This repository contains the research code and dataset used in the study:
 
 **Incremental Value of Meteorological Predictors for Next-Day Air Quality Index Forecasting in Dhaka Using Tree-Based Ensemble Models.**
+
 The study evaluates whether meteorological predictors provide additional value beyond historical pollutant information for next-day daily Air Quality Index (AQI) forecasting in Dhaka, Bangladesh, using daily data from 2023 to 2025.
 
 ## Research Objectives
@@ -12,7 +13,7 @@ The study evaluates whether meteorological predictors provide additional value b
 - Evaluate the incremental value of meteorological predictors.
 - Compare pollutant-only and pollutant-plus-meteorological feature sets.
 - Assess forecasting performance using chronological evaluation.
-- Examine the robustness and seasonal variation of model performance.
+- Examine model robustness and seasonal variation.
 
 ## Feature Scenarios
 
@@ -30,16 +31,28 @@ The study evaluates:
 
 Baseline methods include persistence, seasonal naive-7, and climatology.
 
+## Data Source
+
+The dataset was obtained from:
+
+Karim, R. (2026). *Bangladesh 64 Districts Daily Climate and Air Quality (AQI) Dataset (2023–2025)*, Version 1. Mendeley Data. https://doi.org/10.17632/rd5cdx9shp.1
+
+The original dataset contains daily climate and air quality observations for 64 districts in Bangladesh. This study uses the Dhaka district CSV file provided in the `data/` directory.
+
+The dataset is distributed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license.
+
 ## Data and Evaluation
 
 The study uses daily observations covering 1 January 2023 to 31 December 2025.
 
 Chronological data splitting:
+
 - Training: 4 January 2023 – 30 June 2024 (544 samples)
 - Validation: 1 July 2024 – 31 December 2024 (184 samples)
 - Testing: 1 January 2025 – 31 December 2025 (365 samples)
 
 Additional analyses include:
+
 - Diebold–Mariano tests
 - Paired block bootstrap
 - Random seed stability
@@ -52,7 +65,10 @@ Additional analyses include:
 
 ## Repository Contents
 
-- `Dhaka_AQI_Forecasting_Revised.ipynb`: Original and revised research code, including model development, evaluation, robustness checks, and figure generation.
+- `Dhaka_AQI_Forecasting_Revised.ipynb`: Research notebook containing the original analysis and subsequent revisions, model development, evaluation, robustness checks, and figure generation.
+- `data/Dhaka_Climate_AQI_Data.csv`: Dhaka district dataset used in the analysis.
+- `requirements.txt`: Python package dependencies and versions.
+- `README.md`: Project documentation.
 
 ## Software Environment
 
@@ -64,23 +80,31 @@ The revised analysis was run using:
 - scikit-learn 1.6.1
 - XGBoost 3.4.1
 - LightGBM 4.6.0
+- Matplotlib 3.10.0
+- SciPy 1.16.3
 
 ## How to Run
 
-1. Open the notebook using Google Colab.
-2. Obtain the dataset from its original source.
-3. Upload the dataset and configure the CSV file path.
-4. Install the required Python packages if they are not already available.
-5. Run the notebook cells sequentially.
+1. Open `Dhaka_AQI_Forecasting_Revised.ipynb` using Google Colab.
+2. Ensure the notebook has access to the internet.
+3. Install the required dependencies using:
+
+   `pip install -r requirements.txt`
+
+4. Run the notebook cells sequentially.
+
+The notebook retrieves the dataset directly from this GitHub repository, so manual dataset uploading is not required.
 
 ## Reproducibility
 
-The notebook includes the original analysis and subsequent revisions, together with model evaluation, statistical tests, robustness checks, and visualization procedures.
+The repository provides the dataset, research notebook, and package dependency versions required to reproduce the analysis.
 
-The dataset is not redistributed in this repository. Users should obtain it from its original source.
+The notebook includes data preprocessing, feature engineering, model development, hyperparameter tuning, statistical evaluation, robustness checks, and figure generation.
+
+The dataset is also available from its original Mendeley Data source.
 
 ## Code Availability
 
-The complete research code is publicly available in this GitHub repository:
+The research code and dataset used in this study are publicly available at:
 
 https://github.com/putriikrima2/Dhaka-AQI-Forecasting
