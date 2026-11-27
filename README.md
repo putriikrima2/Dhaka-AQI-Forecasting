@@ -65,7 +65,7 @@ Additional analyses include:
 
 ## Repository Contents
 
-- `Dhaka_AQI_Forecasting_Revised.ipynb`: Research notebook containing the original analysis and subsequent revisions, model development, evaluation, robustness checks, and figure generation.
+- `Revision_Analysis_AQI_Dhaka.ipynb`: Research notebook containing the original analysis and subsequent revisions, model development, evaluation, robustness checks, and figure generation.
 - `data/Dhaka_Climate_AQI_Data.csv`: Dhaka district dataset used in the analysis.
 - `requirements.txt`: Python package dependencies and versions.
 - `README.md`: Project documentation.
